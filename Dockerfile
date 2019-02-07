@@ -24,7 +24,12 @@ RUN cd ~/ && \
 
 RUN cd ~/particl-insight/ && \
     npm install --save git://github.com/particl/particl-insight-api  && \
-    npm install --save git://github.com/particl/particl-insight-ui 
+    npm install --save git://github.com/particl/particl-insight-ui && \
+    npm install --save git://github.com/spazzymoto/particl-bitcore-lib.git#cold_staking && \
+    rm -rf node_modules/particl-bitcore-message/node_modules/particl-bitcore-lib/ && \
+    rm -rf node_modules/particl-bitcore-node/node_modules/particl-bitcore-lib/  && \
+    rm -rf node_modules/particl-insight-api/node_modules/particl-bitcore-lib/   
+
 
 RUN cd ~/ && \
     wget https://github.com/particl/particl-core/releases/download/v0.17.0.1/particl-0.17.0.1-x86_64-linux-gnu_nousb.tar.gz && \
