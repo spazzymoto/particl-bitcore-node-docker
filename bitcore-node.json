@@ -1,0 +1,18 @@
+{
+  "network": "testnet",
+  "port": 3001,
+  "services": [
+    "web",
+    "particl-insight-api",
+    "particl-insight-ui",
+    "bitcoind"
+  ],
+  "servicesConfig": {
+    "bitcoind": {
+      "spawn": {
+        "datadir": "/particl-data",
+        "exec": "/home/insight/particl-core/bin/particld"
+      }
+    }
+  }
+}
